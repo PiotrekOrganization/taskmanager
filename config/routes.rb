@@ -6,7 +6,11 @@ Taskmanager::Application.routes.draw do
 
   namespace :user do
     root :to => 'dashboard#index'
+
     resource :events
+
+    match 'calendar' => 'dashboard#calendar'
+
 
   end
 

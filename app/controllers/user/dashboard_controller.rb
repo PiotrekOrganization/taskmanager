@@ -4,4 +4,8 @@ class User::DashboardController < User::UserController
 
 	end
 
+	def calendar
+
+	end
+
 end
