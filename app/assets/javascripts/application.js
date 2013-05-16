@@ -13,3 +13,34 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+        header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+		},
+		buttonText: {
+		    prev:     '&lsaquo;', // <
+		    next:     '&rsaquo;', // >
+		    prevYear: '&laquo;',  // <<
+		    nextYear: '&raquo;',  // >>
+		    today:    'dzisiaj',
+		    month:    'miesiąc',
+		    week:     'tydzień',
+		    day:      'dzień'
+		},
+		monthNames: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 
+			'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'],
+    	monthNamesShort: ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze',
+ 			'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru'],
+ 		dayNames: ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa',
+ 			'Czwartek', 'Piątek', 'Sobota'],
+ 		dayNamesShort: ['Nie', 'Pon', 'Wto', 'Śro', 'Czw', 'Pią', 'Sob']
+
+    })
+
+
+});
