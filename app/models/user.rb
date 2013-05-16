@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	include RailsSettings::Extend 
 
 	has_many :events
+	after_create :default_settings
 
 	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   	attr_accessible :email, :password, :password_confirmation, :remember_me
