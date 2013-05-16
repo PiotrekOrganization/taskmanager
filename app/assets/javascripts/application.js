@@ -42,5 +42,28 @@ $(document).ready(function() {
 
     })
 
+  $(function(){
+  $("#updateit").click(
+	  
+		function(){
+		     $('.bar').css("width", '+=' + (0.05 * $('.progress').width()));
+		     return false;
+		});
+	});
+
+  	$(function(){
+  $("#remove1").click(
+	  
+		function(){
+		     $('.bar').css("width", '-=' + (0.05 * $('.progress').width()));
+		     return false;
+		});
+	});
+
+
+
 
 });
+
+
+

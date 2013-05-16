@@ -22,13 +22,35 @@
 			=f.text_field :datetime_start
 
 			=f.label :datetime_end
-			=f.text_field :datetime_start
+			=f.text_field :datetime_start 
+			%br
+
+			%p Click to change the progress
+			
+
+			%a{:class=>"btn btn-primary",:id=>"updateit"}
+				%i{:class=>"icon-plus  icon-white" }
+			
+			%a{ :class=>"btn btn-primary", :id=>"remove1"}
+				%i{:class=>"icon-minus  icon-white"}
+			%br
+
+			
+
+			%div{:class=>"progress progress-striped"}
+				%a
+					%div{:class=>"bar",:style=>"width: 50%"}
+				
+			
 
 			=f.label :min_task_minutes
 			=f.text_field :min_task_minutes
 
+
+			
+			%br
 			=f.submit 'Dodaj Wydarzenie', :class => 'btn'
-	%div{:class=>"tab-pane",:id=>"profile"} gowno
+	%div{:class=>"tab-pane",:id=>"profile"} 
 	%div{:class=>"tab-pane",:id=>"messages"}
 	%div{:class=>"tab-pane" ,:id=>"settings"}
 	
