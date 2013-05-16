@@ -39,8 +39,20 @@ $(document).ready(function() {
  		dayNames: ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa',
  			'Czwartek', 'Piątek', 'Sobota'],
  		dayNamesShort: ['Nie', 'Pon', 'Wto', 'Śro', 'Czw', 'Pią', 'Sob']
-
     })
 
+    $('#workingdaystable .btn').click( function() {
+    	if($(this).hasClass('disabled'))
+    	{
+    		$(this).removeClass('disabled')
+    		$(this).removeClass('btn-info')
+    		$(this).parent().find('input').val('0')
+    	}
+    	else {
+    		$(this).addClass('disabled')
+    		$(this).addClass('btn-info')
+    		$(this).parent().find('input').val('1')
+    	}
+    })
 
 });
