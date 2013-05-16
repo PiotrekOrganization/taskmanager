@@ -1,0 +1,69 @@
+= form_tag user_update_settings_path do
+  %fieldset
+    %legend W jakie dni pracujesz?
+    %p
+      %table#workingdaystable.daytable
+        %tr
+
+          %td
+            - if current_user.working_day[:mon]
+              %button.btn.disabled.btn-info{:type=>'button', :data=> { :day => 'pon' } } Poniedziałek
+              %input{:type=>'hidden', :name=>'workingday[mon]', :value => '1'}
+            - else
+              %button.btn{:type=>'button', :data=> { :day => 'pon' } } Poniedziałek
+              %input{:type=>'hidden', :name=>'workingday[mon]', :value => '0'}
+
+          %td
+            - if current_user.working_day[:tue]
+              %button.btn.disabled.btn-info{:type=>'button', :data=> { :day => 'tue' } } Wtorek
+              %input{:type=>'hidden', :name=>'workingday[tue]', :value => '1'}
+            - else
+              %button.btn{:type=>'button', :data=> { :day => 'tue' } } Wtorek
+              %input{:type=>'hidden', :name=>'workingday[tue]', :value => '0'}
+
+          %td
+            - if current_user.working_day[:wed]
+              %button.btn.disabled.btn-info{:type=>'button', :data=> { :day => 'wed' } } Środa
+              %input{:type=>'hidden', :name=>'workingday[wed]', :value => '1'}
+            - else
+              %button.btn{:type=>'button', :data=> { :day => 'wed' } } Środa
+              %input{:type=>'hidden', :name=>'workingday[wed]', :value => '0'}
+
+          %td
+            - if current_user.working_day[:thu]
+              %button.btn.disabled.btn-info{:type=>'button', :data=> { :day => 'thu' } } Czwartek
+              %input{:type=>'hidden', :name=>'workingday[thu]', :value => '1'}
+            - else
+              %button.btn{:type=>'button', :data=> { :day => 'thu' } } Czwartek
+              %input{:type=>'hidden', :name=>'workingday[thu]', :value => '0'}
+
+          %td
+            - if current_user.working_day[:fri]
+              %button.btn.disabled.btn-info{:type=>'button', :data=> { :day => 'fri' } } Piątek
+              %input{:type=>'hidden', :name=>'workingday[fri]', :value => '1'}
+            - else
+              %button.btn{:type=>'button', :data=> { :day => 'fri' } } Piątek
+              %input{:type=>'hidden', :name=>'workingday[fri]', :value => '0'}
+
+          %td
+            - if current_user.working_day[:sat]
+              %button.btn.disabled.btn-info{:type=>'button', :data=> { :day => 'sat' } } Sobota
+              %input{:type=>'hidden', :name=>'workingday[sat]', :value => '1'}
+            - else
+              %button.btn{:type=>'button', :data=> { :day => 'sat' } } Sobota
+              %input{:type=>'hidden', :name=>'workingday[sat]', :value => '0'}
+
+          %td
+            - if current_user.working_day[:sun]
+              %button.btn.disabled.btn-info{:type=>'button', :data=> { :day => 'sun' } } Niedziela
+              %input{:type=>'hidden', :name=>'workingday[sun]', :value => '1'}
+            - else
+              %button.btn{:type=>'button', :data=> { :day => 'sun' } } Niedziela
+              %input{:type=>'hidden', :name=>'workingday[sun]', :value => '0'}
+
+    %legend Ile godzin dziennie chcesz przeznaczyć na pracę?
+    %p
+      %input{:type=>'text', :name=>'daily-work-time'}
+
+    %p
+      %button.btn.btn-primary Zapisz

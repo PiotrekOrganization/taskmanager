@@ -11,7 +11,11 @@ Taskmanager::Application.routes.draw do
 
     match 'calendar' => 'dashboard#calendar'
 
-
+    # user settings
+    match 'settings' => 'settings#index', :as => 'settings'
+    match 'settings/update' => 'settings#update', :as => 'update_settings'
+    match 'settings/default' => 'settings#default', :as => 'default_settings'
+    
   end
 
   # The priority is based upon order of creation:
