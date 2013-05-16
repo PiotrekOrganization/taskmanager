@@ -13,7 +13,7 @@ class User::EventsController < User::UserController
 	end
 
 	def create
-		@event = Event.new
+		@event = Event.new(params[:event])
 		@event.save!
 	end
 
