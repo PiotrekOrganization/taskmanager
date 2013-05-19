@@ -16,4 +16,15 @@ class User < ActiveRecord::Base
   		self.settings.working_days = {:mon => true, :tue => true, :wed => true, :thu => :true, :fri => true, :sat => false, :sun => false}
   	end
 
+    def future_events
+        self.events.where('datetime_start >?', Time.current)
+    end
+
+    def current_events
+
+    end
+
+    def past_events
+    end
+
 end

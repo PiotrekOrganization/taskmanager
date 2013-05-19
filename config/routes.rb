@@ -9,7 +9,7 @@ Taskmanager::Application.routes.draw do
 
     resource :events do 
       match 'finished' =>'events#eventsFinished'
-      match 'during' =>'events#duringEvents'
+      match 'current' =>'events#duringEvents'
       match 'future' =>'events#futureEvents'
     end
 

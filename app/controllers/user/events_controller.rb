@@ -14,6 +14,7 @@ class User::EventsController < User::UserController
 
 	def create
 		@event = Event.new(params[:event])
+		@event.user = current_user
 		@event.save!
 		render "show"
 	end
@@ -44,12 +45,11 @@ class User::EventsController < User::UserController
 	end
 
 	def futureEvents
-		@events = Event.where('datetime_start >?', Time.current)
+		@events = current_user.future_events
 	end
 
 	def duringEvents
-		@events = Event.where("!(:datetime_start >= Time.current AND :datetime_end  <= Time.current)",
-  {:datetime_start => params[:datetime_start], :datetime_end => params[:datetime_end]})
+		@events = Event.where("datetime_start <= '#{Time.current}' AND datetime_end  >= '#{Time.current}'")
 	end
 
 end

@@ -3,7 +3,7 @@
 	%div{:class=>"span4"}
 		%div{:class=>"btn-group"}
 			
-			=link_to 'W trakcie ',{ :controller => "events" ,:action => "eventsFinished"} , :class=>"btn btn-large  btn-warning"
+			=link_to 'W trakcie ',{ :controller => "events" ,:action => "duringEvents"} , :class=>"btn btn-large  btn-warning"
 			=link_to 'Zakończone',{ :controller => "events" ,:action => "eventsFinished"}, :class=>"btn   btn-success btn-large"
 			=link_to 'Przyszłe', { :controller => "events" ,:action => "futureEvents"}, :class=>"btn-large btn btn-info" 
 	%div{:class=>"span4"}
