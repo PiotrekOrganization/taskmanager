@@ -26,6 +26,7 @@ gem 'rspec-rails', '~> 2.0'
 gem 'devise'
 gem 'haml'
 gem 'rails-settings-cached', '0.2.4'
+gem 'jquery_datepicker'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

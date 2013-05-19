@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   
-  attr_accessible :name, :priority, :datetime_start, :datetime_end, :min_task_minutes
+  attr_accessible :name, :priority, :datetime_start, :datetime_end, :min_task_minutes, :fixed
 
   belongs_to :user
 

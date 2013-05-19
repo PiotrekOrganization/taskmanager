@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+
 //= require_tree .
 
 $(document).ready(function() {
@@ -41,12 +43,15 @@ $(document).ready(function() {
  		dayNamesShort: ['Nie', 'Pon', 'Wto', 'Śro', 'Czw', 'Pią', 'Sob']
     })
 
-<<<<<<< HEAD
+  function intToFloat(num, decPlaces) { return num.toFixed(decPlaces); }
   $(function(){
   $("#updateit").click(
 	  
 		function(){
-		     $('.bar').css("width", '+=' + (0.05 * $('.progress').width()));
+		     $('.bar').css("width", '+=' + (0.0254 * $('.progress').width()));
+		     var getWidth =  $('.bar').width();
+		     $('#event_priority').val(intToFloat(getWidth,2));
+
 		     return false;
 		});
 	});
@@ -55,7 +60,11 @@ $(document).ready(function() {
   $("#remove1").click(
 	  
 		function(){
-		     $('.bar').css("width", '-=' + (0.05 * $('.progress').width()));
+		     $('.bar').css("width", '-=' + (0.0254 * $('.progress').width()));
+		     var getWidth =  $('.bar').width();
+
+		     $('#event_priority').val(intToFloat(getWidth,2));
+		     
 		     return false;
 		});
 	});
@@ -65,8 +74,6 @@ $(document).ready(function() {
 
 });
 
-
-=======
     $('#workingdaystable .btn').click( function() {
     	if($(this).hasClass('disabled'))
     	{
@@ -80,5 +87,21 @@ $(document).ready(function() {
     		$(this).parent().find('input').val('1')
     	}
     })
->>>>>>> e9ed9b8e5f21616fcd961c5bebea37df2caf713c
+//date Picker 
+$(function() {
+	$( "#fixStartDatepicker" ).datepicker();
+});
+
+$(function() {
+	$( "#fixEndDatepicker" ).datepicker();
+});
+
+$(function() {
+	$( "#dynStartDatepicker" ).datepicker();
+});
+
+$(function() {
+	$( "#dynEndDatepicker" ).datepicker();
+});
+
 
