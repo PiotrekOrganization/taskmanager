@@ -7,7 +7,11 @@ Taskmanager::Application.routes.draw do
   namespace :user do
     root :to => 'dashboard#index'
 
-    resource :events
+    resource :events do 
+      match 'finished' =>'events#eventsFinished'
+      match 'during' =>'events#duringEvents'
+      match 'future' =>'events#futureEvents'
+    end
 
     match 'calendar' => 'dashboard#calendar'
 

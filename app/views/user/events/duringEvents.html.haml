@@ -1,0 +1,29 @@
+%table{:class=>"table table-hover"}
+	%thead>
+		%tr
+			%th Nazwa Wydarzenia
+			%th Statyczny|Dynamiczny
+			%th Piorytet
+			%th Pozostało minut
+			%th Początek
+			%th Koniec
+			%th Min czas
+
+	%tbody>
+		%tr
+			
+			- for event in @events					
+				%td
+					=event.name
+				%td
+					=event.fixed
+				%td
+					=event.priority
+				%td
+					=event.minutes_to_go
+				%td
+					=event.datetime_start
+				%td
+					=event.datetime_end
+				%td 
+					=event.min_task_minutes

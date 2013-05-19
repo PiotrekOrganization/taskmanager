@@ -89,19 +89,19 @@ $(document).ready(function() {
     })
 //date Picker 
 $(function() {
-	$( "#fixStartDatepicker" ).datepicker();
+	$( "#fixStartDatepicker" ).datepicker({ dateFormat: 'dd-mm-yy' }).val();
 });
 
 $(function() {
-	$( "#fixEndDatepicker" ).datepicker();
+	$( "#fixEndDatepicker" ).datepicker({ dateFormat: 'dd-mm-yy' }).val();
 });
 
 $(function() {
-	$( "#dynStartDatepicker" ).datepicker();
+	$( "#dynStartDatepicker" ).datepicker({ dateFormat: 'dd-mm-yy' }).val();
 });
 
 $(function() {
-	$( "#dynEndDatepicker" ).datepicker();
+	$( "#dynEndDatepicker" ).datepicker({ dateFormat: 'dd-mm-yy' }).val();
 });
 
 

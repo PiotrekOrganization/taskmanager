@@ -12,7 +12,7 @@
 	%div{:class=>"tab-content"}
 		%div{:class=>"tab-pane active", :id=>"home"}
 			=form_for [:user,@event] do |f|
-				= f.hidden_field :fixed, value: false
+				=f.hidden_field :fixed, value: false
 				=f.hidden_field :priority
 				=f.label :name
 				=f.text_field :name	, :class=>"input-large"				

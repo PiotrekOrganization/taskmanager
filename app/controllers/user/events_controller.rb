@@ -5,7 +5,7 @@ class User::EventsController < User::UserController
 	end
 
 	def show
-		@event = Event.find(params[:id])
+		#@event = Event.find(params[:id])
 	end
 
 	def new
@@ -15,6 +15,7 @@ class User::EventsController < User::UserController
 	def create
 		@event = Event.new(params[:event])
 		@event.save!
+		render "show"
 	end
 
 	def edit
@@ -35,6 +36,20 @@ class User::EventsController < User::UserController
 	def delete 
 		Event.find(params[:id]).destroy
      	redirect_to :action => 'index'
+	end
+
+	def eventsFinished
+		@events = Event.where('datetime_end <=?', Time.current)
+		#render :json => @events
+	end
+
+	def futureEvents
+		@events = Event.where('datetime_start >?', Time.current)
+	end
+
+	def duringEvents
+		@events = Event.where("!(:datetime_start >= Time.current AND :datetime_end  <= Time.current)",
+  {:datetime_start => params[:datetime_start], :datetime_end => params[:datetime_end]})
 	end
 
 end
