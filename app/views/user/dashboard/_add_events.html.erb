@@ -1,0 +1,50 @@
+<script type="text/javascript">
+	$(document).ready( function() {
+
+		var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+
+		e = {
+					title: 'Birthday Party',
+					start: new Date(2013, 5, 21)
+				}
+		$('#calendar').fullCalendar({
+	        header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+			},
+			buttonText: {
+			    prev:     '&lsaquo;', // <
+			    next:     '&rsaquo;', // >
+			    prevYear: '&laquo;',  // <<
+			    nextYear: '&raquo;',  // >>
+			    today:    'dzisiaj',
+			    month:    'miesiąc',
+			    week:     'tydzień',
+			    day:      'dzień'
+			},
+			monthNames: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 
+				'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'],
+	    	monthNamesShort: ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze',
+	 			'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru'],
+	 		dayNames: ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa',
+	 			'Czwartek', 'Piątek', 'Sobota'],
+	 		dayNamesShort: ['Nie', 'Pon', 'Wto', 'Śro', 'Czw', 'Pią', 'Sob'],
+			events: [
+				<% for event in @events %>
+				{
+					className: 'event-color-<%= event[:id]%10 %>',
+					title: '<%= event[:name] %>',
+					start: '<%= event[:start] %>',
+					end: '<%= event[:end] %>',
+					allDay: false
+				}<% if event != @events.last %>,<% end %>
+				<% end %>
+			]
+
+	    })
+	})
+</script>

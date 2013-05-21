@@ -27,3 +27,14 @@
 .ui-timepicker-rtl{ direction: rtl; }
 .ui-timepicker-rtl dl { text-align: right; }
 .ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+
+.event-color-0.fc-event {}
+.event-color-1.fc-event {background-color: green}
+.event-color-2.fc-event {background-color: green}
+.event-color-3.fc-event {background-color: green}
+.event-color-4.fc-event {background-color: green}
+.event-color-5.fc-event {background-color: green}
+.event-color-6.fc-event {background-color: green}
+.event-color-7.fc-event {background-color: green}
+.event-color-8.fc-event {background-color: green}
+.event-color-9.fc-event {background-color: green}

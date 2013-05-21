@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
             puts 1
             for event in activeEvents
                 if now.strftime('%H').to_i >= 8 and now.strftime('%H').to_i < 16
-                    event_part = {:name => event.name, :start => now, :end => now + 2.hour}
+                    event_part = {:id => event.id, :name => event.name, :start => now, :end => now + 2.hour}
                     listEvents.append event_part
                     event.minutes_to_go -= 120
                     puts 2

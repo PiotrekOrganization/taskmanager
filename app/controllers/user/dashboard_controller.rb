@@ -5,7 +5,7 @@ class User::DashboardController < User::UserController
 	end
 
 	def calendar
-		render :json => current_user.schedule	
+		@events = current_user.schedule	
 	end
 
 end
