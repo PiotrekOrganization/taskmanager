@@ -21,7 +21,7 @@ class Event < ActiveRecord::Base
 
     # event should provide minutes to go or datetime_start, datetime_end - not both
     def datetime_or_minutes_to_go
-      if !(minutes_to_go.blank? ^ (datetime_start.blank? and datetime_end.blank?))
+      if !(minutes_to_go.blank? ^ datetime_end.blank?)
 	  		errors.add(:datetime_start, "one of date or minutes to go have to be specified")
       end
     end
