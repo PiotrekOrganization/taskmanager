@@ -61,9 +61,10 @@
               %button.btn{:type=>'button', :data=> { :day => 'sun' } } Niedziela
               %input{:type=>'hidden', :name=>'workingday[sun]', :value => '0'}
 
-    %legend Ile godzin dziennie chcesz przeznaczyć na pracę?
-    %p
-      %input{:type=>'text', :name=>'daily-work-time'}
+    %legend O której godzinie chcesz zaczynać i kończyć pracę?
+    %p.horizontal-form
+      %input{:type=>'text', :name=>'daily-start-work', :placeholder => 'Zaczynam o godzinie HH:MM', :style=>"margin-right: 10px"}
+      %input{:type=>'text', :name=>'daily-end-work', :placeholder => 'Kończę o godzinie HH:MM'}
 
     %p
       %button.btn.btn-primary Zapisz

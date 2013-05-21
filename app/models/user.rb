@@ -11,9 +11,11 @@ class User < ActiveRecord::Base
   	def working_day
   		self.settings.working_days
   	end
-
+ 
   	def default_settings
   		self.settings.working_days = {:mon => true, :tue => true, :wed => true, :thu => :true, :fri => true, :sat => false, :sun => false}
+  		self.default_settings.starting_work = "8:00"
+  		self.default_settings.ending_work = "16:00"
   	end
 
     def future_events
