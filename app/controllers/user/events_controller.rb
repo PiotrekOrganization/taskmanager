@@ -1,11 +1,11 @@
 class User::EventsController < User::UserController
 
 	def index
-		@events = Events.find(:all)
+		@events = Event.all
 	end
 
 	def show
-		#@event = Event.find(params[:id])
+		@event = Event.find(params[:id])
 	end
 
 	def new

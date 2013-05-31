@@ -4,10 +4,10 @@
     <div class="navbar-inner">
       <div class="container">
         <ul class="nav">
-          <li class="active"><a href="#">Pulpit</a></li>
-          <li><a href="#">Zadania</a></li>
-          <li><a href="#">Kalendarz</a></li>
-          <li><a href="#">Ustawienia</a></li>
+          <li <% if current_page? root_path %> class="active" <% end %>><a href="#">Pulpit</a></li>
+          <li <% if current_page? user_events_path %> class="active" <% end %>><a href="<%= url_for user_events_path %>">Zadania</a></li>
+          <li <% if current_page? user_calendar_path %> class="active" <% end %>><a href="<%= url_for user_calendar_path %>">Kalendarz</a></li>
+          <li <% if current_page? user_settings_path %> class="active" <% end %>><a href="<%= url_for user_settings_path %>">Ustawienia</a></li>
         </ul>
       </div>
     </div>
